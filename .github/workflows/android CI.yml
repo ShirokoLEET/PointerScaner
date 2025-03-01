@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      run: actions/checkout@v4
+      uses: actions/checkout@v4
        
     - name: Clone playlang repository
       run: git clone https://github.com/ShirokoLEET/playlang.git
