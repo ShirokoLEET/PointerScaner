@@ -1,6 +1,7 @@
 ## MYPOWER
 
-A simple memory scanner
+A simple memory scanner (Build for android)
+(TY vrolife):💚
 
 ## Usage
 
