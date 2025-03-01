@@ -37,7 +37,6 @@ jobs:
       run: python3 setup.py install
 
     - name: Configure CMake
-      working-directory: ./playlang
       run: |
         cmake --preset dev-host-libc++ -B build \
           -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
