@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Clone playlang repository
-      run: git clone git@github.com:vrolife/playlang.git
+      run: git clone https://github.com/ShirokoLEET/playlang.git
 
     - name: Set up Python
       uses: actions/setup-python@v4
