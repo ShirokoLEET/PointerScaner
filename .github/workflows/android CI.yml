@@ -29,16 +29,17 @@ jobs:
 
     - name: Setup Android NDK
       uses: android-actions/setup-android@v2
-      with:
-        ndk-version: ${{ env.ANDROID_NDK_VERSION }}
 
     - name: Install Python package
       working-directory: ./playlang
       run: python3 setup.py install
+      
+    - name: LS
+      run: ls
 
     - name: Configure CMake
       run: |
-        cmake --preset dev-host-libc++ -B build \
+        cmake --preset dev-arm64 -B build \
           -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
           -DANDROID_ABI=${{ env.ANDROID_ABI }} \
           -DANDROID_NATIVE_API_LEVEL=21
