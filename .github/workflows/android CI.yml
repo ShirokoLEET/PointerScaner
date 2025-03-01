@@ -6,22 +6,16 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 env:
   ANDROID_NDK_VERSION: r25c
   ANDROID_ABI: arm64-v8a
-
+    
 jobs:
   build-android:
     runs-on: ubuntu-latest
     steps:
     - name: Clone playlang repository
-      uses: actions/checkout@v4
-      with:
-        repository: vrolife/playlang
-        # 如果是私有仓库需要添加token
-        token: ${{ secrets.GITHUB_TOKEN }}
-        path: playlang
+      run: git clone git@github.com:vrolife/playlang.git
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -55,7 +49,7 @@ jobs:
       run: cmake --build build --parallel $(nproc)
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: android-build
         path: playlang/build/src/mypower
