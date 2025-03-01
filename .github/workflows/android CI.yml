@@ -14,6 +14,9 @@ jobs:
   build-android:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout repository
+      run: actions/checkout@v3
+       
     - name: Clone playlang repository
       run: git clone https://github.com/ShirokoLEET/playlang.git
 
