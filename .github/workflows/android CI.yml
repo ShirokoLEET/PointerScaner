@@ -48,7 +48,6 @@ jobs:
           -DANDROID_NATIVE_API_LEVEL=21
 
     - name: Build project
-      working-directory: ./playlang
       run: cmake --build build --parallel $(nproc)
 
     - name: Upload artifacts
